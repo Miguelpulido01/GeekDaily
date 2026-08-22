@@ -208,50 +208,74 @@
     </nav>
 
     <script>
-        // Poner la fecha actual
-        const dateOptions = { weekday: 'long', day: 'numeric', month: 'short' };
-        let dateStr = new Date().toLocaleDateString('es-ES', dateOptions);
-        document.getElementById('current-date').innerText = dateStr.charAt(0).toUpperCase() + dateStr.slice(1);
+       // Poner la fecha actual
+const dateOptions = { weekday: 'long', day: 'numeric', month: 'short' };
+let dateStr = new Date().toLocaleDateString('es-ES', dateOptions);
+document.getElementById('current-date').innerText = dateStr.charAt(0).toUpperCase() + dateStr.slice(1);
 
-        // Cargar noticias
-        const rssUrl = 'https://www.xataka.com/feed';
-        const apiUrl = `https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(rssUrl)}&api_key=`;
+// Datos de las noticias idénticos a la imagen
+const data = {
+    items: [
+        {
+            title: "Confirmado: Lanzamiento de la PlayStation 6 Pro para 2027 con Gráficos de Siguiente Generación",
+            description: "Sony revela detalles de la consola más potente hasta la fecha, prometiendo juegos en 8k y trazado de rayos avanzado...",
+            thumbnail: "https://images.unsplash.com/photo-1606813907291-d86efa9b94db?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+            source: "IGN",
+            time: "hace 1h",
+            icon: "https://via.placeholder.com/16/ff0000/ffffff?text="
+        },
+        {
+            title: "Lo Mejor de la Comic-Con 2026: Revelaciones Impactantes de DC y Marvel",
+            description: "Tráilers exclusivos, anuncios de elenco y planes de universo compartido desatados...",
+            thumbnail: "https://images.unsplash.com/photo-1612036782180-6f0b6cd846fe?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+            source: "The Verge",
+            time: "hace 2h",
+            icon: "https://via.placeholder.com/16/8a2be2/ffffff?text="
+        },
+        {
+            title: "OpenAI GPT-5.5: La Nueva IA Muestra Capacidades de Razonamiento Autónomo",
+            description: "El último modelo de lenguaje sorprende en pruebas de lógica y resolución de problemas...",
+            thumbnail: "https://images.unsplash.com/photo-1677442136019-21780ecad995?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+            source: "TechCrunch",
+            time: "hace 3h",
+            icon: "https://via.placeholder.com/16/00ff00/ffffff?text="
+        },
+        {
+            title: "GTA VI: Nuevos Detalles de Gameplay y Mapa Filtrados antes del Lanzamiento",
+            description: "Jugadores descubren ubicaciones de Vice City y mecánicas de robo...",
+            thumbnail: "https://images.unsplash.com/photo-1605901309584-818e25960b8f?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+            source: "Kotaku",
+            time: "hace 4h",
+            icon: "https://via.placeholder.com/16/ffd700/ffffff?text="
+        }
+    ]
+};
 
-        fetch(apiUrl)
-            .then(response => response.json())
-            .then(data => {
-                const container = document.getElementById('news-list');
-                container.innerHTML = ''; 
+const container = document.getElementById('news-list');
+container.innerHTML = '';
 
-                data.items.slice(0, 15).forEach(item => {
-                    const cleanSummary = item.description.replace(/(<([^>]+)>)/gi, "");
-                    const imgUrl = item.thumbnail || item.enclosure.link || 'https://via.placeholder.com/600x300/1e1e1e/555555?text=Geek+Daily';
-                    
-                    const card = `
-                        <a href="${item.link}" target="_blank" class="card">
-                            <img src="${imgUrl}" alt="Noticia">
-                            <div class="content">
-                                <h2 class="title">${item.title}</h2>
-                                <p class="summary">${cleanSummary}</p>
-                                <div class="card-footer">
-                                    <div class="source-info">
-                                        <img src="https://via.placeholder.com/16/ff4500/ffffff?text=X" class="source-icon" alt="Fuente">
-                                        <span>Xataka • hace poco</span>
-                                    </div>
-                                    <div class="actions">
-                                        <i class="fa-solid fa-arrow-up-from-bracket"></i>
-                                        <i class="fa-regular fa-bookmark"></i>
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-                    `;
-                    container.innerHTML += card;
-                });
-            })
-            .catch(error => {
-                document.getElementById('news-list').innerHTML = '<p style="text-align:center; color:red;">Error al cargar las noticias.</p>';
-            });
+data.items.forEach(item => {
+    const card = `
+        <a href="#" class="card">
+            <img src="${item.thumbnail}" alt="Noticia">
+            <div class="content">
+                <h2 class="title">${item.title}</h2>
+                <p class="summary">${item.description}</p>
+                <div class="card-footer">
+                    <div class="source-info">
+                        <img src="${item.icon}" class="source-icon" alt="Fuente">
+                        <span>${item.source} • ${item.time}</span>
+                    </div>
+                    <div class="actions">
+                        <i class="fa-solid fa-arrow-up-from-bracket"></i>
+                        <i class="fa-regular fa-bookmark"></i>
+                    </div>
+                </div>
+            </div>
+        </a>
+    `;
+    container.innerHTML += card;
+});
     </script>
 </body>
 </html>
