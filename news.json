@@ -1,0 +1,7 @@
+[
+{"t":"noticia","h":"hace 20 min","ti":"Ejemplo: título neutro y directo de una noticia","d":"Qué pasó, fecha, precio y plataformas disponibles.","tags":["Tecnología"],"f":[{"n":"Fuente A","l":"EN","u":"#"},{"n":"Fuente B","l":"ES","u":"#"},{"n":"Fuente C","l":"EN","u":"#"}]},
+{"t":"rumor","o":"filtracion","h":"hace 1 h","ti":"Ejemplo: una imagen filtrada sugiere un nuevo juego de lucha","d":"Sin confirmación oficial del estudio.","tags":["Mortal Kombat","NetherRealm"],"f":[{"n":"Reddit","l":"EN","u":"#"}]},
+{"t":"rumor","o":"pista","h":"hace 2 h","ti":"Ejemplo: el estudio publicó un mensaje enigmático","d":"Podría ser un anuncio, pero no está confirmado.","tags":["NetherRealm"],"f":[{"n":"Cuenta oficial del estudio","l":"EN","u":"#"}]},
+{"t":"falso","h":"hace 3 h","ti":"Ejemplo: circula un bulo sobre un supuesto anuncio","d":"La empresa lo desmintió y la imagen está editada.","tags":["PlayStation"],"f":[{"n":"Fuente oficial","l":"EN","u":"#"},{"n":"Fuente B","l":"ES","u":"#"}]},
+{"t":"patrocinado","m":"Marca X","ti":"Ejemplo: nombre del producto y lo que ofrece","d":"Precio, disponibilidad y características principales.","tags":["Tecnología"],"u":"#"}
+]
