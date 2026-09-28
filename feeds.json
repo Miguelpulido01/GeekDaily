@@ -1,0 +1,16 @@
+{
+ "temas": ["Tecnología","IA","Videojuegos","PlayStation","Xbox","Nintendo","PC","Celulares","Espacio","Mortal Kombat","NetherRealm","Injustice"],
+ "fuentes": [
+  {"n":"The Verge","l":"EN","u":"https://www.theverge.com/rss/index.xml"},
+  {"n":"Ars Technica","l":"EN","u":"https://feeds.arstechnica.com/arstechnica/index"},
+  {"n":"Engadget","l":"EN","u":"https://www.engadget.com/rss.xml"},
+  {"n":"PC Gamer","l":"EN","u":"https://www.pcgamer.com/rss/"},
+  {"n":"Eurogamer","l":"EN","u":"https://www.eurogamer.net/feed"},
+  {"n":"Xataka","l":"ES","u":"https://feeds.weblogssl.com/xataka2"},
+  {"n":"Genbeta","l":"ES","u":"https://feeds.weblogssl.com/genbeta"},
+  {"n":"Hipertextual","l":"ES","u":"https://hipertextual.com/feed"},
+  {"n":"Vandal","l":"ES","u":"https://vandal.elespanol.com/xml.cgi"},
+  {"n":"Reddit r/MortalKombat","l":"EN","u":"https://www.reddit.com/r/MortalKombat/.rss","foro":true},
+  {"n":"Reddit r/Games","l":"EN","u":"https://www.reddit.com/r/Games/.rss","foro":true}
+ ]
+}
